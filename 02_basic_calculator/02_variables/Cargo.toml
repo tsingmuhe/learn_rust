@@ -1,5 +1,5 @@
 [package]
-name = "ex_01_intro_01_syntax"
+name = "ex_02_basic_calculator_02_variables"
 version = "0.1.0"
 edition = "2021"
 

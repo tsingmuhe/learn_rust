@@ -1,5 +1,6 @@
 [workspace]
 members = [
     "01_intro/*",
+    "02_basic_calculator/*",
 ]
 resolver = "2"
