@@ -2,5 +2,6 @@
 members = [
     "01_intro/*",
     "02_basic_calculator/*",
+    "03_ticket_v1/*",
 ]
 resolver = "2"
