@@ -45,3 +45,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_02_basic_calculator_09_saturating"
 version = "0.1.0"
+
+[[package]]
+name = "ex_02_basic_calculator_10_as_casting"
+version = "0.1.0"
