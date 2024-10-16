@@ -57,3 +57,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_03_ticket_v1_01_struct"
 version = "0.1.0"
+
+[[package]]
+name = "ex_03_ticket_v1_02_validation"
+version = "0.1.0"
