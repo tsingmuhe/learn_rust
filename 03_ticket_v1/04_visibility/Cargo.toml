@@ -1,0 +1,6 @@
+[package]
+name = "ex_03_ticket_v1_04_visibility"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
