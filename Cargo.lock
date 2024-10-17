@@ -81,3 +81,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_03_ticket_v1_07_setters"
 version = "0.1.0"
+
+[[package]]
+name = "ex_03_ticket_v1_08_stack"
+version = "0.1.0"
