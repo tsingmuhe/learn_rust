@@ -77,3 +77,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_03_ticket_v1_06_ownership"
 version = "0.1.0"
+
+[[package]]
+name = "ex_03_ticket_v1_07_setters"
+version = "0.1.0"
