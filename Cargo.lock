@@ -93,3 +93,11 @@ version = "0.1.0"
 [[package]]
 name = "ex_03_ticket_v1_10_references_in_memory"
 version = "0.1.0"
+
+[[package]]
+name = "ex_03_ticket_v1_11_destructor"
+version = "0.1.0"
+
+[[package]]
+name = "ex_03_ticket_v1_12_outro"
+version = "0.1.0"
