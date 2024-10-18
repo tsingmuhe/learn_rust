@@ -109,3 +109,11 @@ version = "0.1.0"
 [[package]]
 name = "ex_04_traits_01_trait"
 version = "0.1.0"
+
+[[package]]
+name = "ex_04_traits_02_orphan_rule"
+version = "0.1.0"
+
+[[package]]
+name = "ex_04_traits_03_operator_overloading"
+version = "0.1.0"
