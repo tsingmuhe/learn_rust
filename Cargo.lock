@@ -129,3 +129,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_04_traits_06_str_slice"
 version = "0.1.0"
+
+[[package]]
+name = "ex_04_traits_07_deref"
+version = "0.1.0"
