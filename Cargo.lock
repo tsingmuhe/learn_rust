@@ -117,3 +117,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_04_traits_03_operator_overloading"
 version = "0.1.0"
+
+[[package]]
+name = "ex_04_traits_04_derive"
+version = "0.1.0"
