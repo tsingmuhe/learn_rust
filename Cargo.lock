@@ -101,3 +101,11 @@ version = "0.1.0"
 [[package]]
 name = "ex_03_ticket_v1_12_outro"
 version = "0.1.0"
+
+[[package]]
+name = "ex_04_traits_00_intro"
+version = "0.1.0"
+
+[[package]]
+name = "ex_04_traits_01_trait"
+version = "0.1.0"
