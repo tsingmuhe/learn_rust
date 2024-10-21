@@ -145,3 +145,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_04_traits_10_assoc_vs_generic"
 version = "0.1.0"
+
+[[package]]
+name = "ex_04_traits_11_clone"
+version = "0.1.0"
