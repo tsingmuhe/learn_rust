@@ -3,17 +3,28 @@ trait Power<T> {
     fn power(&self, n: T) -> Self::Output;
 }
 
-impl<T> Power<T> for u32 {
+
+impl Power<u16> for u32 {
     type Output = u32;
 
-    fn power(&self, n: T) -> Self::Output {
-        let mut sum: u32 = 1;
+    fn power(&self, n: u16) -> Self::Output {
+        self.pow(n.into())
+    }
+}
 
-        for _ in 1..=n {
-            sum = sum * self
-        }
+impl Power<u32> for u32 {
+    type Output = u32;
 
-        sum
+    fn power(&self, n: u32) -> Self::Output {
+        self.pow(n)
+    }
+}
+
+impl Power<&u32> for u32 {
+    type Output = u32;
+
+    fn power(&self, n: &u32) -> Self::Output {
+        self.pow(*n)
     }
 }
 
