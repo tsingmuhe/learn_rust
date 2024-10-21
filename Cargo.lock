@@ -169,3 +169,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_05_ticket_v2_01_enum"
 version = "0.1.0"
+
+[[package]]
+name = "ex_05_ticket_v2_02_match"
+version = "0.1.0"
