@@ -157,3 +157,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_04_traits_13_drop"
 version = "0.1.0"
+
+[[package]]
+name = "ex_04_traits_14_outro"
+version = "0.1.0"
