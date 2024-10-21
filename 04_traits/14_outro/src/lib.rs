@@ -1,6 +1,6 @@
 use std::ops::Add;
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct SaturatingU16 {
     value: u16,
 }
@@ -58,13 +58,6 @@ impl Add<&u16> for SaturatingU16 {
 
     fn add(self, rhs: &u16) -> Self::Output {
         Self { value: self.value.saturating_add(*rhs) }
-    }
-}
-
-
-impl PartialEq for SaturatingU16 {
-    fn eq(&self, other: &Self) -> bool {
-        self.value == other.value
     }
 }
 
