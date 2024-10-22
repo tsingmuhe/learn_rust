@@ -1,0 +1,6 @@
+[package]
+name = "ex_05_ticket_v2_09_error_trait"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
