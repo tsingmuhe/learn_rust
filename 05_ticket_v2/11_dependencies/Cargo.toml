@@ -1,0 +1,7 @@
+[package]
+name = "ex_05_ticket_v2_11_dependencies"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.90"
