@@ -181,3 +181,7 @@ version = "0.1.0"
 [[package]]
 name = "ex_05_ticket_v2_04_if_let"
 version = "0.1.0"
+
+[[package]]
+name = "ex_05_ticket_v2_05_nullability"
+version = "0.1.0"

@@ -1,0 +1,84 @@
+#[derive(Debug, PartialEq)]
+struct Ticket {
+    title: String,
+    description: String,
+    status: Status,
+}
+
+#[derive(Debug, PartialEq)]
+enum Status {
+    ToDo,
+    InProgress { assigned_to: String },
+    Done,
+}
+
+impl Ticket {
+    pub fn new(title: String, description: String, status: Status) -> Ticket {
+        if title.is_empty() {
+            panic!("Title cannot be empty");
+        }
+
+        if title.len() > 50 {
+            panic!("Title cannot be longer than 50 bytes");
+        }
+
+        if description.is_empty() {
+            panic!("Description cannot be empty");
+        }
+
+        if description.len() > 500 {
+            panic!("Description cannot be longer than 500 bytes");
+        }
+
+        Ticket {
+            title,
+            description,
+            status,
+        }
+    }
+
+    pub fn assigned_to(&self) -> Option<&String> {
+        // if let Status::InProgress { assigned_to } = &self.status {
+        //     Some(assigned_to)
+        // } else {
+        //     None
+        // }
+
+        let Status::InProgress { assigned_to } = &self.status else {
+            return None;
+        };
+
+        Some(assigned_to)
+    }
+}
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_todo() {
+        let ticket = Ticket::new("valid_title".to_string(), "valid_description".to_string(), Status::ToDo);
+        assert!(ticket.assigned_to().is_none());
+    }
+
+    #[test]
+    fn test_done() {
+        let ticket = Ticket::new("valid_title".to_string(), "valid_description".to_string(), Status::Done);
+        assert!(ticket.assigned_to().is_none());
+    }
+
+    #[test]
+    fn test_in_progress() {
+        let ticket = Ticket::new(
+            "valid_title".to_string(),
+            "valid_description".to_string(),
+            Status::InProgress {
+                assigned_to: "Alice".to_string(),
+            },
+        );
+
+        assert_eq!(ticket.assigned_to(), Some(&"Alice".to_string()));
+    }
+}

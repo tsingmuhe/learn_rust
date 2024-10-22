@@ -7,17 +7,17 @@ enum Shape {
 
 impl Shape {
     pub fn radius(&self) -> f64 {
-        // if let Shape::Circle { radius } = self {
-        //     *radius
-        // } else {
-        //     panic!("This should not happen")
-        // }
+        if let Shape::Circle { radius } = self {
+            *radius
+        } else {
+            panic!("This should not happen")
+        }
 
-        let Shape::Circle { radius } = self else {
-            panic!("Circle shape has no radius");
-        };
-
-        *radius
+        // let Shape::Circle { radius } = self else {
+        //     panic!("Circle shape has no radius");
+        // };
+        //
+        // *radius
     }
 }
 
