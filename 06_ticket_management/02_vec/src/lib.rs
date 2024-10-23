@@ -1,7 +1,9 @@
 pub fn fibonacci(n: u32) -> u32 {
     let n = n as usize;
 
-    let mut v = vec![0, 1];
+    let mut v = Vec::with_capacity(n + 1);
+    v.push(0);
+    v.push(1);
 
     for i in 2..=n {
         v.push(v[i - 1] + v[i - 2]);
