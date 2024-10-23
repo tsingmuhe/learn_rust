@@ -1,0 +1,6 @@
+[package]
+name = "ex_06_ticket_management_01_arrays"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
