@@ -241,6 +241,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex_05_ticket_v2_15_outro"
+version = "0.1.0"
+dependencies = [
+ "thiserror",
+]
+
+[[package]]
 name = "proc-macro2"
 version = "1.0.88"
 source = "registry+https://github.com/rust-lang/crates.io-index"
