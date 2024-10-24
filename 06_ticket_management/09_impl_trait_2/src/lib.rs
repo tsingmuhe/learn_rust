@@ -63,7 +63,6 @@ mod tests {
     #[test]
     fn generic_add() {
         let mut store = TicketStore::new();
-        // This won't compile if `add_ticket` uses `impl Trait` syntax in argument position.
         store.add_ticket::<TicketDraft>(TicketDraft {
             title: TicketTitle("ticket_title".to_string()),
             description: TicketDescription("ticket_description".to_string()),
