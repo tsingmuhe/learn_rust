@@ -50,7 +50,6 @@ impl<'a> IntoIterator for &'a TicketStore {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
