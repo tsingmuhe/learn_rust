@@ -20,7 +20,7 @@ pub struct Ticket {
     pub status: Status,
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone)]
 pub struct TicketStore {
     tickets: Vec<Ticket>,
 }
