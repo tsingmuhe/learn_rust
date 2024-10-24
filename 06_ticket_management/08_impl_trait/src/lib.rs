@@ -34,11 +34,10 @@ impl TicketStore {
         self.tickets.push(ticket);
     }
 
-    pub fn to_dos(&self) -> Vec<&Ticket> {
+    pub fn in_progress(&self) -> impl Iterator<Item = &Ticket> {
         self.tickets
             .iter()
-            .filter(|&t| t.status == Status::ToDo)
-            .collect()
+            .filter(|&t| t.status == Status::InProgress)
     }
 }
 
@@ -58,15 +57,15 @@ mod tests {
 
         store.add_ticket(todo.clone());
 
-        let ticket = Ticket {
+        let in_progress = Ticket {
             title: TicketTitle(String::from("Title")),
             description: TicketDescription(String::from("Description")),
             status: Status::InProgress,
         };
-        store.add_ticket(ticket);
+        store.add_ticket(in_progress.clone());
 
-        let todos: Vec<&Ticket> = store.to_dos();
-        assert_eq!(todos.len(), 1);
-        assert_eq!(todos[0], &todo);
+        let in_progress_tickets: Vec<&Ticket> = store.in_progress().collect();
+        assert_eq!(in_progress_tickets.len(), 1);
+        assert_eq!(in_progress_tickets[0], &in_progress);
     }
 }
