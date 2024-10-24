@@ -272,6 +272,10 @@ name = "ex_06_ticket_management_05_iter"
 version = "0.1.0"
 
 [[package]]
+name = "ex_06_ticket_management_06_lifetimes"
+version = "0.1.0"
+
+[[package]]
 name = "proc-macro2"
 version = "1.0.88"
 source = "registry+https://github.com/rust-lang/crates.io-index"
