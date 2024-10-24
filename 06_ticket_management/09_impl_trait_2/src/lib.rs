@@ -34,7 +34,7 @@ impl TicketStore {
         self.tickets.push(ticket.into());
     }
 
-    pub fn in_progress(&self) -> impl Iterator<Item=&Ticket> {
+    pub fn in_progress(&self) -> impl Iterator<Item = &Ticket> {
         self.tickets
             .iter()
             .filter(|&t| t.status == Status::InProgress)
