@@ -36,14 +36,11 @@ impl Ticket {
 
     pub fn assigned_to(&self) -> &str {
         match &self.status {
-            Status::InProgress { assigned_to } => {
-                assigned_to
-            }
+            Status::InProgress { assigned_to } => assigned_to,
             _ => panic!("Only `In-Progress` tickets can be assigned to someone"),
         }
     }
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -52,14 +49,22 @@ mod tests {
     #[test]
     #[should_panic(expected = "Only `In-Progress` tickets can be assigned to someone")]
     fn test_todo() {
-        let ticket = Ticket::new("valid_title".to_string(), "valid_description".to_string(), Status::ToDo);
+        let ticket = Ticket::new(
+            "valid_title".to_string(),
+            "valid_description".to_string(),
+            Status::ToDo,
+        );
         ticket.assigned_to();
     }
 
     #[test]
     #[should_panic(expected = "Only `In-Progress` tickets can be assigned to someone")]
     fn test_done() {
-        let ticket = Ticket::new("valid_title".to_string(), "valid_description".to_string(), Status::Done);
+        let ticket = Ticket::new(
+            "valid_title".to_string(),
+            "valid_description".to_string(),
+            Status::Done,
+        );
         ticket.assigned_to();
     }
 

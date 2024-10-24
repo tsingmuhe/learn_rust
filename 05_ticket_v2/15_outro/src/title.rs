@@ -12,9 +12,13 @@ impl TryFrom<String> for TicketTitle {
 
     fn try_from(value: String) -> Result<Self, Self::Error> {
         if value.is_empty() {
-            Err(ParseTitleError { message: "The title cannot be empty".to_string() })
+            Err(ParseTitleError {
+                message: "The title cannot be empty".to_string(),
+            })
         } else if value.len() > 50 {
-            Err(ParseTitleError { message: "The title cannot be longer than 50 bytes".to_string() })
+            Err(ParseTitleError {
+                message: "The title cannot be longer than 50 bytes".to_string(),
+            })
         } else {
             Ok(TicketTitle(value))
         }
@@ -28,7 +32,6 @@ impl TryFrom<&str> for TicketTitle {
         TicketTitle::try_from(value.to_string())
     }
 }
-
 
 #[cfg(test)]
 mod tests {

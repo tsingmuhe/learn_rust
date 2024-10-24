@@ -29,7 +29,9 @@ pub struct TicketStore {
 
 impl TicketStore {
     pub fn new() -> Self {
-        Self { tickets: Vec::new() }
+        Self {
+            tickets: Vec::new(),
+        }
     }
 
     pub fn add_ticket(&mut self, ticket: Ticket) {
@@ -49,7 +51,6 @@ impl IntoIterator for TicketStore {
         self.tickets.into_iter()
     }
 }
-
 
 #[cfg(test)]
 mod tests {

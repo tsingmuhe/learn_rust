@@ -38,14 +38,14 @@ impl Ticket {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn title_cannot_be_empty() {
-        let error = Ticket::new("".into(), "valid_description".to_string(), Status::ToDo).unwrap_err();
+        let error =
+            Ticket::new("".into(), "valid_description".to_string(), Status::ToDo).unwrap_err();
         assert_eq!(error, "Title cannot be empty");
     }
 
@@ -57,13 +57,19 @@ mod tests {
 
     #[test]
     fn title_cannot_be_longer_than_fifty_chars() {
-        let error = Ticket::new("1".repeat(51), "valid_description".to_string(), Status::ToDo).unwrap_err();
+        let error = Ticket::new(
+            "1".repeat(51),
+            "valid_description".to_string(),
+            Status::ToDo,
+        )
+        .unwrap_err();
         assert_eq!(error, "Title cannot be longer than 50 bytes");
     }
 
     #[test]
     fn description_cannot_be_longer_than_500_chars() {
-        let error = Ticket::new("valid_title".to_string(), "1".repeat(501), Status::ToDo).unwrap_err();
+        let error =
+            Ticket::new("valid_title".to_string(), "1".repeat(501), Status::ToDo).unwrap_err();
         assert_eq!(error, "Description cannot be longer than 500 bytes");
     }
 }

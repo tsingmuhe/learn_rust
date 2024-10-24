@@ -12,9 +12,13 @@ impl TryFrom<String> for TicketDescription {
 
     fn try_from(value: String) -> Result<Self, Self::Error> {
         if value.is_empty() {
-            Err(ParseDescriptionError { message: "The description cannot be empty".to_string() })
+            Err(ParseDescriptionError {
+                message: "The description cannot be empty".to_string(),
+            })
         } else if value.len() > 500 {
-            Err(ParseDescriptionError { message: "The description cannot be longer than 500 bytes".to_string() })
+            Err(ParseDescriptionError {
+                message: "The description cannot be longer than 500 bytes".to_string(),
+            })
         } else {
             Ok(TicketDescription(value))
         }
@@ -28,7 +32,6 @@ impl TryFrom<&str> for TicketDescription {
         TicketDescription::try_from(value.to_string())
     }
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -56,6 +59,9 @@ mod tests {
     #[test]
     fn test_try_from_long_string() {
         let err = TicketDescription::try_from("1".repeat(501)).unwrap_err();
-        assert_eq!(err.to_string(), "The description cannot be longer than 500 bytes");
+        assert_eq!(
+            err.to_string(),
+            "The description cannot be longer than 500 bytes"
+        );
     }
 }

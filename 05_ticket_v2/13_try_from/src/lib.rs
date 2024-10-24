@@ -16,10 +16,12 @@ impl TryFrom<&str> for Status {
 
     fn try_from(value: &str) -> Result<Self, Self::Error> {
         match value.to_lowercase().as_str() {
-            "todo" => { Ok(Status::ToDo) }
-            "inprogress" => { Ok(Status::InProgress) }
-            "done" => { Ok(Status::Done) }
-            _ => Err(ParseStatusError { value: value.to_string() }),
+            "todo" => Ok(Status::ToDo),
+            "inprogress" => Ok(Status::InProgress),
+            "done" => Ok(Status::Done),
+            _ => Err(ParseStatusError {
+                value: value.to_string(),
+            }),
         }
     }
 }
@@ -31,7 +33,6 @@ impl TryFrom<String> for Status {
         Status::try_from(value.as_str())
     }
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -67,4 +68,3 @@ mod tests {
         let status = Status::try_from("todo1").unwrap();
     }
 }
-

@@ -19,7 +19,6 @@ fn test_order() {
     assert_eq!(order.total(), 7998);
 }
 
-
 #[test]
 #[should_panic]
 fn test_empty_product_name() {

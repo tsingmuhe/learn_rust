@@ -8,9 +8,9 @@ struct Ticket {
 
 impl PartialEq for Ticket {
     fn eq(&self, other: &Self) -> bool {
-        self.title == other.title &&
-            self.description == other.description &&
-            self.status == other.status
+        self.title == other.title
+            && self.description == other.description
+            && self.status == other.status
     }
 }
 
@@ -59,7 +59,6 @@ mod tests {
         assert!(ticket1 != ticket2);
     }
 
-
     #[test]
     fn test_title_not_matching() {
         let status = "To-Do";
@@ -100,4 +99,3 @@ mod tests {
         assert!(ticket1 != ticket2);
     }
 }
-

@@ -9,15 +9,14 @@ enum Shape {
 impl Shape {
     pub fn n_sides(&self) -> u8 {
         match self {
-            Shape::Circle => { 0 }
-            Shape::Square => { 4 }
-            Shape::Rectangle => { 4 }
-            Shape::Triangle => { 3 }
-            Shape::Pentagon => { 5 }
+            Shape::Circle => 0,
+            Shape::Square => 4,
+            Shape::Rectangle => 4,
+            Shape::Triangle => 3,
+            Shape::Pentagon => 5,
         }
     }
 }
-
 
 #[cfg(test)]
 mod tests {

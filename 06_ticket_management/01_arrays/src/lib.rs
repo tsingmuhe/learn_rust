@@ -8,41 +8,41 @@ pub enum Weekday {
     Sunday,
 }
 
-
 pub struct WeekTemperatures {
     temperatures: [Option<i32>; 7],
 }
 
 impl WeekTemperatures {
     pub fn new() -> Self {
-        Self { temperatures: [None; 7] }
+        Self {
+            temperatures: [None; 7],
+        }
     }
 
     pub fn get_temperature(&self, day: Weekday) -> Option<i32> {
         match day {
-            Weekday::Monday => { self.temperatures[0] }
-            Weekday::Tuesday => { self.temperatures[1] }
-            Weekday::Wednesday => { self.temperatures[2] }
-            Weekday::Thursday => { self.temperatures[3] }
-            Weekday::Friday => { self.temperatures[4] }
-            Weekday::Saturday => { self.temperatures[5] }
-            Weekday::Sunday => { self.temperatures[6] }
+            Weekday::Monday => self.temperatures[0],
+            Weekday::Tuesday => self.temperatures[1],
+            Weekday::Wednesday => self.temperatures[2],
+            Weekday::Thursday => self.temperatures[3],
+            Weekday::Friday => self.temperatures[4],
+            Weekday::Saturday => self.temperatures[5],
+            Weekday::Sunday => self.temperatures[6],
         }
     }
 
     pub fn set_temperature(&mut self, day: Weekday, temperature: i32) {
         match day {
-            Weekday::Monday => { self.temperatures[0] = Some(temperature) }
-            Weekday::Tuesday => { self.temperatures[1] = Some(temperature) }
-            Weekday::Wednesday => { self.temperatures[2] = Some(temperature) }
-            Weekday::Thursday => { self.temperatures[3] = Some(temperature) }
-            Weekday::Friday => { self.temperatures[4] = Some(temperature) }
-            Weekday::Saturday => { self.temperatures[5] = Some(temperature) }
-            Weekday::Sunday => { self.temperatures[6] = Some(temperature) }
+            Weekday::Monday => self.temperatures[0] = Some(temperature),
+            Weekday::Tuesday => self.temperatures[1] = Some(temperature),
+            Weekday::Wednesday => self.temperatures[2] = Some(temperature),
+            Weekday::Thursday => self.temperatures[3] = Some(temperature),
+            Weekday::Friday => self.temperatures[4] = Some(temperature),
+            Weekday::Saturday => self.temperatures[5] = Some(temperature),
+            Weekday::Sunday => self.temperatures[6] = Some(temperature),
         }
     }
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -74,11 +74,23 @@ mod tests {
         week_temperatures.set_temperature(Weekday::Sunday, 55);
 
         assert_eq!(week_temperatures.get_temperature(Weekday::Monday), Some(25));
-        assert_eq!(week_temperatures.get_temperature(Weekday::Tuesday), Some(30));
-        assert_eq!(week_temperatures.get_temperature(Weekday::Wednesday), Some(35));
-        assert_eq!(week_temperatures.get_temperature(Weekday::Thursday), Some(40));
+        assert_eq!(
+            week_temperatures.get_temperature(Weekday::Tuesday),
+            Some(30)
+        );
+        assert_eq!(
+            week_temperatures.get_temperature(Weekday::Wednesday),
+            Some(35)
+        );
+        assert_eq!(
+            week_temperatures.get_temperature(Weekday::Thursday),
+            Some(40)
+        );
         assert_eq!(week_temperatures.get_temperature(Weekday::Friday), Some(45));
-        assert_eq!(week_temperatures.get_temperature(Weekday::Saturday), Some(50));
+        assert_eq!(
+            week_temperatures.get_temperature(Weekday::Saturday),
+            Some(50)
+        );
         assert_eq!(week_temperatures.get_temperature(Weekday::Sunday), Some(55));
     }
 }

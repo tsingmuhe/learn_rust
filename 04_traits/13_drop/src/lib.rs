@@ -4,9 +4,7 @@ struct DropBomb {
 
 impl DropBomb {
     fn new() -> Self {
-        Self {
-            status: true,
-        }
+        Self { status: true }
     }
 
     fn defuse(&mut self) {
@@ -21,7 +19,6 @@ impl Drop for DropBomb {
         }
     }
 }
-
 
 #[cfg(test)]
 mod tests {

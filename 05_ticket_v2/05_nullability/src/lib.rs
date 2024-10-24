@@ -52,20 +52,27 @@ impl Ticket {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn test_todo() {
-        let ticket = Ticket::new("valid_title".to_string(), "valid_description".to_string(), Status::ToDo);
+        let ticket = Ticket::new(
+            "valid_title".to_string(),
+            "valid_description".to_string(),
+            Status::ToDo,
+        );
         assert!(ticket.assigned_to().is_none());
     }
 
     #[test]
     fn test_done() {
-        let ticket = Ticket::new("valid_title".to_string(), "valid_description".to_string(), Status::Done);
+        let ticket = Ticket::new(
+            "valid_title".to_string(),
+            "valid_description".to_string(),
+            Status::Done,
+        );
         assert!(ticket.assigned_to().is_none());
     }
 

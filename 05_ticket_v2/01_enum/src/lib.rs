@@ -30,7 +30,11 @@ impl Ticket {
             panic!("Description cannot be longer than 500 bytes");
         }
 
-        Ticket { title, description, status }
+        Ticket {
+            title,
+            description,
+            status,
+        }
     }
 
     pub fn title(&self) -> &String {
@@ -45,7 +49,6 @@ impl Ticket {
         self.status
     }
 }
-
 
 #[cfg(test)]
 mod tests {

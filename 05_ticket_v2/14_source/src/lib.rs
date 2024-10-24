@@ -13,7 +13,7 @@ pub enum TicketNewError {
     #[error("Description cannot be longer than 500 bytes")]
     DescriptionTooLong,
     #[error("{0}")]
-    InvalidStatus(#[from]ParseStatusError),
+    InvalidStatus(#[from] ParseStatusError),
 }
 
 #[derive(Debug, PartialEq, Clone)]
@@ -56,7 +56,12 @@ mod tests {
 
     #[test]
     fn invalid_status() {
-        let err = Ticket::new("valid_title".to_string(), "valid_description".to_string(), "invalid".into()).unwrap_err();
+        let err = Ticket::new(
+            "valid_title".to_string(),
+            "valid_description".to_string(),
+            "invalid".into(),
+        )
+        .unwrap_err();
         assert_eq!(
             err.to_string(),
             "`invalid` is not a valid status. Use one of: ToDo, InProgress, Done"

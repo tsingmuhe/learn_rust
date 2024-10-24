@@ -24,30 +24,45 @@ enum TicketNewError {
 impl Display for TicketNewError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            TicketNewError::InvalidTitle(msg) => { write!(f, "{}", msg) }
-            TicketNewError::InvalidDescription(msg) => { write!(f, "{}", msg) }
+            TicketNewError::InvalidTitle(msg) => {
+                write!(f, "{}", msg)
+            }
+            TicketNewError::InvalidDescription(msg) => {
+                write!(f, "{}", msg)
+            }
         }
     }
 }
 
 impl Error for TicketNewError {}
 
-
 impl Ticket {
-    pub fn new(title: String, description: String, status: Status) -> Result<Ticket, TicketNewError> {
+    pub fn new(
+        title: String,
+        description: String,
+        status: Status,
+    ) -> Result<Ticket, TicketNewError> {
         if title.is_empty() {
-            return Err(TicketNewError::InvalidTitle("Title cannot be empty".to_string()));
+            return Err(TicketNewError::InvalidTitle(
+                "Title cannot be empty".to_string(),
+            ));
         }
 
         if title.len() > 50 {
-            return Err(TicketNewError::InvalidTitle("Title cannot be longer than 50 bytes".to_string()));
+            return Err(TicketNewError::InvalidTitle(
+                "Title cannot be longer than 50 bytes".to_string(),
+            ));
         }
 
         if description.is_empty() {
-            return Err(TicketNewError::InvalidDescription("Description cannot be empty".to_string()));
+            return Err(TicketNewError::InvalidDescription(
+                "Description cannot be empty".to_string(),
+            ));
         }
         if description.len() > 500 {
-            return Err(TicketNewError::InvalidDescription("Description cannot be longer than 500 bytes".to_string()));
+            return Err(TicketNewError::InvalidDescription(
+                "Description cannot be longer than 500 bytes".to_string(),
+            ));
         }
 
         Ok(Ticket {
@@ -60,12 +75,15 @@ impl Ticket {
 
 fn easy_ticket(title: String, description: String, status: Status) -> Ticket {
     match Ticket::new(title.clone(), description.clone(), status.clone()) {
-        Ok(ticket) => { ticket }
-        Err(TicketNewError::InvalidTitle(err)) => { panic!("{}", err) }
-        Err(TicketNewError::InvalidDescription(_)) => { Ticket::new(title, "Description not provided".to_string(), status).unwrap() }
+        Ok(ticket) => ticket,
+        Err(TicketNewError::InvalidTitle(err)) => {
+            panic!("{}", err)
+        }
+        Err(TicketNewError::InvalidDescription(_)) => {
+            Ticket::new(title, "Description not provided".to_string(), status).unwrap()
+        }
     }
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -86,7 +104,11 @@ mod tests {
     #[test]
     #[should_panic(expected = "Title cannot be longer than 50 bytes")]
     fn title_cannot_be_longer_than_fifty_chars() {
-        easy_ticket("1".repeat(51), "valid_description".to_string(), Status::ToDo);
+        easy_ticket(
+            "1".repeat(51),
+            "valid_description".to_string(),
+            Status::ToDo,
+        );
     }
 
     #[test]

@@ -44,12 +44,16 @@ impl Ticket {
 
 #[cfg(test)]
 mod tests {
-    use std::any::{Any, TypeId};
     use crate::Ticket;
+    use std::any::{Any, TypeId};
 
     #[test]
     fn test_type() {
-        let ticket = Ticket::new("valid_title".to_string(), "valid_description".to_string(), "To-Do".to_string());
+        let ticket = Ticket::new(
+            "valid_title".to_string(),
+            "valid_description".to_string(),
+            "To-Do".to_string(),
+        );
 
         assert_eq!(TypeId::of::<str>(), ticket.title().type_id());
         assert_eq!(TypeId::of::<str>(), ticket.description().type_id());

@@ -5,7 +5,11 @@ struct Order {
 
 impl Order {
     fn is_available(&self) -> bool {
-        if self.price > 0 && self.quantity > 0 { true } else { false }
+        if self.price > 0 && self.quantity > 0 {
+            true
+        } else {
+            false
+        }
     }
 }
 

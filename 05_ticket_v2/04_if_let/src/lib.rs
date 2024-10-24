@@ -4,7 +4,6 @@ enum Shape {
     Rectangle { width: f64, height: f64 },
 }
 
-
 impl Shape {
     pub fn radius(&self) -> f64 {
         if let Shape::Circle { radius } = self {
@@ -43,6 +42,6 @@ mod tests {
             width: 1.0,
             height: 2.0,
         }
-            .radius();
+        .radius();
     }
 }

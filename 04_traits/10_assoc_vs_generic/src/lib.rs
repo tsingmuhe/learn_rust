@@ -3,7 +3,6 @@ trait Power<T> {
     fn power(&self, n: T) -> Self::Output;
 }
 
-
 impl Power<u16> for u32 {
     type Output = u32;
 
@@ -27,7 +26,6 @@ impl Power<&u32> for u32 {
         self.pow(*n)
     }
 }
-
 
 #[cfg(test)]
 mod tests {
