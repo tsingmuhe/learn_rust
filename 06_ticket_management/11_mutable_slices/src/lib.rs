@@ -5,7 +5,6 @@ pub fn squared(slice: &mut [i32]) {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;

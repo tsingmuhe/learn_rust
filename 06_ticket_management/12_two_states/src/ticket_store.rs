@@ -4,31 +4,35 @@ use crate::ticket::{Ticket, TicketDraft, TicketId};
 #[derive(Clone)]
 pub struct TicketStore {
     tickets: Vec<Ticket>,
+    counter: u64,
 }
 
 impl TicketStore {
     pub fn new() -> Self {
         Self {
             tickets: Vec::new(),
+            counter: 0,
         }
     }
 
     pub fn add_ticket(&mut self, ticket_draft: TicketDraft) -> TicketId {
-        let id = TicketId(self.tickets.len() as u64);
+        let id = self.counter;
+        self.counter += 1;
+
         self.tickets.push(Ticket {
-            id,
+            id: TicketId(id),
             title: ticket_draft.title,
             description: ticket_draft.description,
             status: Status::ToDo,
         });
-        id
+
+        TicketId(id)
     }
 
     pub fn get(&self, id: TicketId) -> Option<&Ticket> {
         self.tickets.iter().find(|&t| t.id == id)
     }
 }
-
 
 #[cfg(test)]
 mod tests {
