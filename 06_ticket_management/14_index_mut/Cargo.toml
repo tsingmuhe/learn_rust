@@ -1,0 +1,6 @@
+[package]
+name = "ex_06_ticket_management_14_index_mut"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
