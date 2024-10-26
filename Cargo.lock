@@ -314,6 +314,13 @@ name = "ex_06_ticket_management_14_index_mut"
 version = "0.1.0"
 
 [[package]]
+name = "ex_06_ticket_management_15_hashmap"
+version = "0.1.0"
+dependencies = [
+ "thiserror",
+]
+
+[[package]]
 name = "proc-macro2"
 version = "1.0.88"
 source = "registry+https://github.com/rust-lang/crates.io-index"
