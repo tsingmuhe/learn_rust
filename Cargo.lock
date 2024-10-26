@@ -321,6 +321,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex_06_ticket_management_16_btreemap"
+version = "0.1.0"
+
+[[package]]
+name = "ex_07_threads_00_intro"
+version = "0.1.0"
+
+[[package]]
 name = "proc-macro2"
 version = "1.0.88"
 source = "registry+https://github.com/rust-lang/crates.io-index"
