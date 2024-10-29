@@ -333,6 +333,10 @@ name = "ex_07_threads_02_static"
 version = "0.1.0"
 
 [[package]]
+name = "ex_07_threads_03_leak"
+version = "0.1.0"
+
+[[package]]
 name = "proc-macro2"
 version = "1.0.88"
 source = "registry+https://github.com/rust-lang/crates.io-index"
